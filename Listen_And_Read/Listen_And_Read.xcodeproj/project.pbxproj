@@ -23,6 +23,7 @@
 		CA52DC062773B4C3006AFBAD /* BookOfTheDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DC052773B4C3006AFBAD /* BookOfTheDayCell.swift */; };
 		CA52DC092773B5A0006AFBAD /* Home+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DC082773B5A0006AFBAD /* Home+Ext.swift */; };
 		CA52DC0D2773B5E3006AFBAD /* ImageDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DC0C2773B5E3006AFBAD /* ImageDetails.swift */; };
+		CAAAEF8627776E1B00B9ADDE /* BookOfTheDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAEF8527776E1B00B9ADDE /* BookOfTheDay.swift */; };
 		CAD1EA3627773F8500820426 /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD1EA3427773F8500820426 /* BookListCell.swift */; };
 		CAD1EA3727773F8500820426 /* BookListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD1EA3527773F8500820426 /* BookListCell.xib */; };
 		CAD1EA3E2777442500820426 /* BooksListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD1EA3D2777442500820426 /* BooksListTableViewController.swift */; };
@@ -34,18 +35,11 @@
 		CAE17FA4276E2F3400F3BBF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAE17FA3276E2F3400F3BBF8 /* Assets.xcassets */; };
 		CAE17FA7276E2F3400F3BBF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE17FA5276E2F3400F3BBF8 /* LaunchScreen.storyboard */; };
 		CAE17FB3276E313900F3BBF8 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FB2276E313900F3BBF8 /* MainTabBar.swift */; };
-		CAE17FB6276E316B00F3BBF8 /* HomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FB5276E316B00F3BBF8 /* HomeCollectionVC.swift */; };
-		CAE17FB9276E31DA00F3BBF8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FB8276E31DA00F3BBF8 /* MainViewController.swift */; };
-		CAE17FBB276E31DF00F3BBF8 /* NewPetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FBA276E31DF00F3BBF8 /* NewPetProfileViewController.swift */; };
 		CAE17FBD276E328100F3BBF8 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAE17FBC276E328100F3BBF8 /* LabelCell.xib */; };
 		CAE17FBF276E329000F3BBF8 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FBE276E329000F3BBF8 /* LabelCell.swift */; };
-		CAE17FC2276E32FB00F3BBF8 /* PetsProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FC1276E32FB00F3BBF8 /* PetsProfileInfoCell.swift */; };
-		CAE17FC6276E335B00F3BBF8 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FC5276E335B00F3BBF8 /* Pet.swift */; };
-		CAE17FC8276E338500F3BBF8 /* PetsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FC7276E338500F3BBF8 /* PetsData.swift */; };
 		CAE17FCB276E33B600F3BBF8 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FCA276E33B600F3BBF8 /* UIColor.swift */; };
 		CAE17FCD276E33DF00F3BBF8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FCC276E33DF00F3BBF8 /* Item.swift */; };
 		CAE17FCF276E340300F3BBF8 /* CollectionVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FCE276E340300F3BBF8 /* CollectionVC+Ext.swift */; };
-		CAE17FD1276E38F200F3BBF8 /* ShowPetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FD0276E38F200F3BBF8 /* ShowPetProfileViewController.swift */; };
 		CAE17FD3276E3C7700F3BBF8 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FD2276E3C7700F3BBF8 /* UserInfoViewController.swift */; };
 		CAE17FD7276E3F1F00F3BBF8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FD6276E3F1F00F3BBF8 /* User.swift */; };
 		CAE17FDA276E470D00F3BBF8 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE17FD9276E470D00F3BBF8 /* Utilities.swift */; };
@@ -68,6 +62,7 @@
 		CA52DC052773B4C3006AFBAD /* BookOfTheDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookOfTheDayCell.swift; sourceTree = "<group>"; };
 		CA52DC082773B5A0006AFBAD /* Home+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Home+Ext.swift"; sourceTree = "<group>"; };
 		CA52DC0C2773B5E3006AFBAD /* ImageDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetails.swift; sourceTree = "<group>"; };
+		CAAAEF8527776E1B00B9ADDE /* BookOfTheDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookOfTheDay.swift; sourceTree = "<group>"; };
 		CAD1EA3427773F8500820426 /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		CAD1EA3527773F8500820426 /* BookListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookListCell.xib; sourceTree = "<group>"; };
 		CAD1EA3D2777442500820426 /* BooksListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListTableViewController.swift; sourceTree = "<group>"; };
@@ -81,18 +76,11 @@
 		CAE17FA6276E2F3400F3BBF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAE17FA8276E2F3400F3BBF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAE17FB2276E313900F3BBF8 /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
-		CAE17FB5276E316B00F3BBF8 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
-		CAE17FB8276E31DA00F3BBF8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		CAE17FBA276E31DF00F3BBF8 /* NewPetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPetProfileViewController.swift; sourceTree = "<group>"; };
 		CAE17FBC276E328100F3BBF8 /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		CAE17FBE276E329000F3BBF8 /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
-		CAE17FC1276E32FB00F3BBF8 /* PetsProfileInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsProfileInfoCell.swift; sourceTree = "<group>"; };
-		CAE17FC5276E335B00F3BBF8 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
-		CAE17FC7276E338500F3BBF8 /* PetsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsData.swift; sourceTree = "<group>"; };
 		CAE17FCA276E33B600F3BBF8 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CAE17FCC276E33DF00F3BBF8 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CAE17FCE276E340300F3BBF8 /* CollectionVC+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CollectionVC+Ext.swift"; sourceTree = "<group>"; };
-		CAE17FD0276E38F200F3BBF8 /* ShowPetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowPetProfileViewController.swift; sourceTree = "<group>"; };
 		CAE17FD2276E3C7700F3BBF8 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		CAE17FD6276E3F1F00F3BBF8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CAE17FD9276E470D00F3BBF8 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -175,6 +163,14 @@
 				CA52DC032773B4BC006AFBAD /* BookByCtegoryCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CAAAEF8327776DED00B9ADDE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAAAEF8527776E1B00B9ADDE /* BookOfTheDay.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CAD1EA38277741C900820426 /* BookCategoryList */ = {
@@ -263,7 +259,6 @@
 				CAE17FD4276E3C8000F3BBF8 /* User */,
 				CAE17FB1276E30FB00F3BBF8 /* TabBars */,
 				CAE17FB4276E315D00F3BBF8 /* Home */,
-				CAE17FB7276E31C800F3BBF8 /* PetsProfile */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -291,50 +286,13 @@
 		CAE17FB4276E315D00F3BBF8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CAAAEF8327776DED00B9ADDE /* Model */,
 				CA52DC022773B4A4006AFBAD /* Cell */,
 				CA52DC002773B469006AFBAD /* Home Screen.swift */,
 				CAE17FCC276E33DF00F3BBF8 /* Item.swift */,
 				CAE17FBE276E329000F3BBF8 /* LabelCell.swift */,
-				CAE17FB5276E316B00F3BBF8 /* HomeCollectionVC.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		CAE17FB7276E31C800F3BBF8 /* PetsProfile */ = {
-			isa = PBXGroup;
-			children = (
-				CAE17FC4276E335200F3BBF8 /* Model */,
-				CAE17FC3276E330800F3BBF8 /* PetsProfileViewController */,
-				CAE17FC0276E32EA00F3BBF8 /* PetsProfileCell */,
-			);
-			path = PetsProfile;
-			sourceTree = "<group>";
-		};
-		CAE17FC0276E32EA00F3BBF8 /* PetsProfileCell */ = {
-			isa = PBXGroup;
-			children = (
-				CAE17FC1276E32FB00F3BBF8 /* PetsProfileInfoCell.swift */,
-			);
-			path = PetsProfileCell;
-			sourceTree = "<group>";
-		};
-		CAE17FC3276E330800F3BBF8 /* PetsProfileViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CAE17FD0276E38F200F3BBF8 /* ShowPetProfileViewController.swift */,
-				CAE17FBA276E31DF00F3BBF8 /* NewPetProfileViewController.swift */,
-				CAE17FB8276E31DA00F3BBF8 /* MainViewController.swift */,
-			);
-			path = PetsProfileViewController;
-			sourceTree = "<group>";
-		};
-		CAE17FC4276E335200F3BBF8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CAE17FC7276E338500F3BBF8 /* PetsData.swift */,
-				CAE17FC5276E335B00F3BBF8 /* Pet.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		CAE17FC9276E339200F3BBF8 /* Extensions */ = {
@@ -448,11 +406,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAE17FBB276E31DF00F3BBF8 /* NewPetProfileViewController.swift in Sources */,
 				CA411BDF27745A9E00969351 /* BooksCell.swift in Sources */,
 				CAE17FD3276E3C7700F3BBF8 /* UserInfoViewController.swift in Sources */,
 				CA52DC012773B469006AFBAD /* Home Screen.swift in Sources */,
-				CAE17FD1276E38F200F3BBF8 /* ShowPetProfileViewController.swift in Sources */,
 				CAE17FCB276E33B600F3BBF8 /* UIColor.swift in Sources */,
 				CAE17F9F276E2F3300F3BBF8 /* ViewController.swift in Sources */,
 				CA52DBFF2773ACA1006AFBAD /* TermsAndServices.swift in Sources */,
@@ -463,24 +419,20 @@
 				CAE17FDA276E470D00F3BBF8 /* Utilities.swift in Sources */,
 				CAD1EA3627773F8500820426 /* BookListCell.swift in Sources */,
 				CA411BE127745B4B00969351 /* Data.swift in Sources */,
-				CAE17FB6276E316B00F3BBF8 /* HomeCollectionVC.swift in Sources */,
 				CA411BDB27745A4E00969351 /* EnglishVC.swift in Sources */,
 				CA52DC092773B5A0006AFBAD /* Home+Ext.swift in Sources */,
+				CAAAEF8627776E1B00B9ADDE /* BookOfTheDay.swift in Sources */,
 				CAE17FD7276E3F1F00F3BBF8 /* User.swift in Sources */,
 				CAE17FB3276E313900F3BBF8 /* MainTabBar.swift in Sources */,
-				CAE17FC8276E338500F3BBF8 /* PetsData.swift in Sources */,
 				CA04AB29276F601700EF99F7 /* CustomLabel Class.swift in Sources */,
 				CAD1EA3E2777442500820426 /* BooksListTableViewController.swift in Sources */,
 				CAE17FCD276E33DF00F3BBF8 /* Item.swift in Sources */,
 				CAE17FCF276E340300F3BBF8 /* CollectionVC+Ext.swift in Sources */,
-				CAE17FC6276E335B00F3BBF8 /* Pet.swift in Sources */,
 				CA04AB23276F5D3C00EF99F7 /* SignUpViewController.swift in Sources */,
 				CA04AB27276F5F4C00EF99F7 /* MainVC.swift in Sources */,
 				CA52DC042773B4BC006AFBAD /* BookByCtegoryCell.swift in Sources */,
 				CA04AB25276F5E1300EF99F7 /* SplashClass.swift in Sources */,
-				CAE17FB9276E31DA00F3BBF8 /* MainViewController.swift in Sources */,
 				CAE17F9B276E2F3300F3BBF8 /* AppDelegate.swift in Sources */,
-				CAE17FC2276E32FB00F3BBF8 /* PetsProfileInfoCell.swift in Sources */,
 				CA52DC062773B4C3006AFBAD /* BookOfTheDayCell.swift in Sources */,
 				CAD1EA412777454000820426 /* BookListItems.swift in Sources */,
 				CA04AB21276F5D3600EF99F7 /* LogInViewController.swift in Sources */,
