@@ -9,9 +9,9 @@ import UIKit
 
 class LabelCell: UICollectionViewCell {
 
+  @IBOutlet weak var root_View: UIView!
   @IBOutlet weak var titlleLabel: UILabel!
   
-  @IBOutlet weak var titleImage: UIImageView!
   
   @IBOutlet weak var categorize: UIImageView!
   
