@@ -53,7 +53,7 @@ struct BookManager {
         
         if let safeData = data
         {
-          if let json = try? JSONSerialization.jsonObject(with: safeData, options: []) as! Dictionary<String,Any> {
+          if let json = try? JSONSerialization.jsonObject(with: safeData, options: []) as? Dictionary<String,Any> {
             
             var nextItem : BookModel?
             if let next = json["next"] as? String {

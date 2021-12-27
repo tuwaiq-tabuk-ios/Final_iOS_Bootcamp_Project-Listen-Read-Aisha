@@ -35,7 +35,8 @@ struct Books  {
       self.authorname = "NA"
     }
     let imageJson = books["formats"] as? Dictionary<String,String>
-    self.imageLink = (imageJson?["image/jpeg"]!) as! String
+    self.imageLink = String((imageJson?["image/jpeg"])!)
+//    self.imageLink = (imageJson?["image/jpeg"]!) as! String
     
     if let link = imageJson!["text/html"] {
       self.format = link

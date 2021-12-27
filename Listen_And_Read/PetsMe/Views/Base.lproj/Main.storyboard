@@ -909,7 +909,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHW-H7-8C9">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="100" id="sht-E3-WIC"/>
+                                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="sht-E3-WIC"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                                                 <color key="textColor" red="0.92549019610000005" green="0.47450980390000003" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
