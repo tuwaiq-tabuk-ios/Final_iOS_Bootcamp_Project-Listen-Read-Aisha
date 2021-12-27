@@ -16,10 +16,18 @@ class LabelCell: UICollectionViewCell {
   @IBOutlet weak var categorize: UIImageView!
   
   
-  
+//  override func awakeFromNib() {
+//      super.awakeFromNib()
+//      
+//      self.imageView.layer.cornerRadius = 8
+//      self.mainView.layer.cornerRadius = 8
+//
+//  }
   
   override func awakeFromNib() {
         super.awakeFromNib()
+    self.root_View.clipsToBounds = true
+
         // Initialization code
     }
 

@@ -15,8 +15,10 @@ class Home: UIViewController{
   
   let searchBarController = UISearchController(searchResultsController: nil)
   var timer: Timer?
-  //  var results = Results(hits: [])
-  //  var recentResults = Results(hits: [])
+  
+  var categoryIndex = [0,1,2,3,4,5,6,7,8,9]
+  var category : String?
+  
   
   
   @IBOutlet weak var categoriesCollection: UICollectionView!
@@ -29,16 +31,16 @@ class Home: UIViewController{
   ]
   
   let bookByCtegory = [
-    ImageDetails(myImages: "Novel", name: "Novel"),
-    ImageDetails(myImages: "History", name: "History"),
-    ImageDetails(myImages: "Mystery", name: "Mystery"),
-    ImageDetails(myImages: "Fiction", name: "Fiction"),
-    ImageDetails(myImages: "Starter", name: "Starter"),
-    ImageDetails(myImages: "Romance", name: "Romance"),
-    ImageDetails(myImages: "Fantasy", name: "Fantasy"),
-    ImageDetails(myImages: "Science", name: "Science"),
-    ImageDetails(myImages: "Health", name: "Health"),
-    ImageDetails(myImages: "Children", name: "Children"),
+    ImageDetails(myImages: "Novel", name: "Fiction"),
+    ImageDetails(myImages: "History", name: "Drama"),
+    ImageDetails(myImages: "Mystery", name: "Humor"),
+    ImageDetails(myImages: "Fiction", name: "Politics"),
+    ImageDetails(myImages: "Starter", name: "Philosphy"),
+    ImageDetails(myImages: "Romance", name: "History"),
+    ImageDetails(myImages: "Fantasy", name: "Advanture"),
+    ImageDetails(myImages: "Science", name: "Mystory"),
+    ImageDetails(myImages: "Health", name: "Romance"),
+    ImageDetails(myImages: "Children", name: "Novel"),
   ]
   
   
@@ -49,9 +51,8 @@ class Home: UIViewController{
     configureSize(numberOfHorizantalCells: 4, marginsBetweenCells: 20)
     
     configureSearchBar()
-    
-    
   }
+  
   
   override func viewWillAppear(_ animated: Bool) {
     navigationController?.navigationBar.isHidden = false
@@ -64,13 +65,15 @@ class Home: UIViewController{
   func configureSearchBar()  {
     
     navigationItem.searchController = searchBarController
-    //    searchBarController.searchBar.delegate = self
     searchBarController.searchBar.placeholder = "Search Books"
     searchBarController.searchBar.enablesReturnKeyAutomatically = true
     navigationController?.navigationBar.tintColor = .cmOrange3
     
   }
 }
+
+
+//MARK: - Home Extension
 
 extension Home: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
   
@@ -104,41 +107,63 @@ extension Home: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
       cellB.categorize.image = UIImage(named:  bookByCtegory[indexPath.row].myImages)
       cellB.titlleLabel.text = "\(bookByCtegory[indexPath.row].name)"
       cellB.categorize.layer.cornerRadius = 20
-      cellB.root_View.layer.cornerRadius = 20
-      //      performSegue(withIdentifier: "show", sender: nil)
-      
-      
-      //      cellB.titleImage.image = UIImage(named: bookByCtegory[indexPath.row].myImages)
-      //      cellB.bookByCategory_View.layer.cornerRadius = 20
-      //      cellB.categortName_Label.text = "\(bookByCtegory[indexPath.row].name)"
-      
       return cellB
     }
-    
   }
+  
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if collectionView == self.categoriesCollection {
-      performSegue(withIdentifier: "show", sender: nil)
+    switch categoryIndex[indexPath.row] {
+    case 0:
+      category = "Fiction"
+    case 1:
+      category = "Drama"
+    case 2:
+      category = "Humor"
+    case 3:
+      category = "Politics"
+    case 4:
+      category = "Philosophy"
+    case 5:
+      category = "History"
+    case 6:
+      category = "Adventure"
+    case 7:
+      category = "Mystory"
+    case 8:
+      category = "Romance"
+    case 9:
+      category = "Novel"
       
+    default:
+      category = "Fiction"
     }
     
+    let backItem = UIBarButtonItem()
+    backItem.title = category
+    //  backItem.tintColor = .red
+    
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat-Bold", size: 20)], for: .normal) // your textattributes here
+    navigationItem.backBarButtonItem = backItem
+    let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "BooksListTableViewController") as! BooksListTableViewController
+    secondViewController.category =  category
+    
+    self.navigationController?.pushViewController(secondViewController, animated: true)
   }
   
   
-  
-  func collectionView(_ collectionView: UICollectionView,
-                      layout collectionViewLayout: UICollectionViewLayout,
+  func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
     
     if let layout = collectionViewLayout as? UICollectionViewFlowLayout{
       return layout.itemSize
+      
     }else{
       
       return .zero
-      //      CGSize(width: 0, height: 0)
     }
   }
+  
   
   
   func configureSize (numberOfHorizantalCells: CGFloat, marginsBetweenCells:CGFloat){

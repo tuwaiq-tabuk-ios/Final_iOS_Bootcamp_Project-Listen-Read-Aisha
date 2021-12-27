@@ -42,7 +42,7 @@ class MainVC: UIViewController {
     print(#function)
     if sender.tag == 0 {
       
-      vc = self.storyboard?.instantiateViewController(withIdentifier: "Register") as! Register
+      vc = self.storyboard?.instantiateViewController(withIdentifier: "Register") as! SignUpViewController
       vc.modalPresentationStyle = .fullScreen
       present(vc,animated: false, completion: nil)
       
