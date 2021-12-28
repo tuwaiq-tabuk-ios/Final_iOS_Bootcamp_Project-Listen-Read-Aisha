@@ -31,7 +31,7 @@ struct BookManager {
     
     let UrlString = "\(bookUrl)&topic=\(category)&search=\(search)"
     let urlNew:String = UrlString.replacingOccurrences(of: " ", with: "%20")
-    //        var urlString:String = UrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+
     print(urlNew)
     
     performRequest(with: urlNew)
@@ -104,9 +104,9 @@ struct BookManager {
     return booksarray
   }
   
+  
   func ParseNextJSON( _ nextUrl : String) -> BookModel
   {
-    
     let booksNext = BookModel(nextValue: nextUrl)
     return booksNext
   }

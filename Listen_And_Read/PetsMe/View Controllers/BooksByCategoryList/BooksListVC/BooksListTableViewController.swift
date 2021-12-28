@@ -12,15 +12,11 @@ private let reuseIdentifier2 = String(describing: BookListCell.self)
 class BooksListTableViewController: UITableViewController, BookMangerDelegate {
 
   
-  
-  
-  //  collectionView.collectionViewLayout = UICollectionViewFlowLayout()
+
   
   var vSpinner : UIView?
   var category: String?
   var articles: Array<Dictionary<String,Any>> = [];
-  var pageNumber = 1
-  var isDataLoading = false
   var booksManager = BookManager()
   var booksData:[Books] = [Books]()
   var nextLink : String?
@@ -155,12 +151,7 @@ extension BooksListTableViewController : UISearchBarDelegate {
     self.showSpinner(onView: self.view)
     
   }
-  
-  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-    self.searchBar.layer.borderColor = UIColor.cmWhite.cgColor
-    self.searchBar.layer.borderWidth = 6
-    
-  }
+
   
   
   

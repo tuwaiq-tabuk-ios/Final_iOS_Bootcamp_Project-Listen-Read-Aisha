@@ -105,12 +105,12 @@
 			path = LogIn;
 			sourceTree = "<group>";
 		};
-		CA1BDAAD2779A82F00ADD8B6 /* BookInfo */ = {
+		CA1BDAAD2779A82F00ADD8B6 /* Book Detail */ = {
 			isa = PBXGroup;
 			children = (
 				CA1BDAAE2779A84000ADD8B6 /* BookInfoVC */,
 			);
-			path = BookInfo;
+			path = "Book Detail";
 			sourceTree = "<group>";
 		};
 		CA1BDAAE2779A84000ADD8B6 /* BookInfoVC */ = {
@@ -252,7 +252,7 @@
 		CAE17FAF276E30B100F3BBF8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CA1BDAAD2779A82F00ADD8B6 /* BookInfo */,
+				CA1BDAAD2779A82F00ADD8B6 /* Book Detail */,
 				CAD1EA38277741C900820426 /* BooksByCategoryList */,
 				CA52DBFD2773AC8B006AFBAD /* Terms_Servecis */,
 				CA04AB1F276F5CF000EF99F7 /* LogIn */,

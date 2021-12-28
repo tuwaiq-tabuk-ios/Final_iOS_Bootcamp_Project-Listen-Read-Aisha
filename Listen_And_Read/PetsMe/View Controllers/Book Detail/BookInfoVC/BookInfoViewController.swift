@@ -22,7 +22,7 @@ class BookInfoViewController: UIViewController {
   var image:String = ""
   var author:String = ""
   var genre:String = ""
-
+  
   var summary:String = ""
   ////
   
@@ -41,19 +41,17 @@ class BookInfoViewController: UIViewController {
     bookGenre_Label.text = genre
     bookAuthor_Label.text = author
     bookSummary_Label.text = summary
-
-        DispatchQueue.global().async{
-    let data = try? Data(contentsOf: URL(string: self.image)!)
     
-    if let data = data, let image = UIImage(data: data) {
-      DispatchQueue.main.async {
-        self.bookCover_ImageView?.image = image
-        
-        
-        
+    DispatchQueue.global().async{
+      let data = try? Data(contentsOf: URL(string: self.image)!)
+      
+      if let data = data, let image = UIImage(data: data) {
+        DispatchQueue.main.async {
+          self.bookCover_ImageView?.image = image
+          
+        }
       }
     }
-  }
   }
   
   
