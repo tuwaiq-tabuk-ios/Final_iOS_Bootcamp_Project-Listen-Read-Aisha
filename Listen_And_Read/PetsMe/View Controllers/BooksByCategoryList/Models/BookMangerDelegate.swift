@@ -8,5 +8,5 @@
 import Foundation
 protocol BookMangerDelegate {
     func didUpdateBook(_ bookManager : BookManager, _ books: [Books], _ nextUrl : BookModel)
-    func didFailWithError(error : Error)
+//    func didFailWithError(error : Error)
 }

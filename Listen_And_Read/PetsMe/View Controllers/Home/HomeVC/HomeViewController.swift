@@ -113,42 +113,44 @@ extension Home: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
   
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    switch categoryIndex[indexPath.row] {
-    case 0:
-      category = "Fiction"
-    case 1:
-      category = "Drama"
-    case 2:
-      category = "Humor"
-    case 3:
-      category = "Politics"
-    case 4:
-      category = "Philosophy"
-    case 5:
-      category = "History"
-    case 6:
-      category = "Adventure"
-    case 7:
-      category = "Mystory"
-    case 8:
-      category = "Romance"
-    case 9:
-      category = "Novel"
+    if collectionView == self.categoriesCollection {
+      switch categoryIndex[indexPath.row] {
+      case 0:
+        category = "Fiction"
+      case 1:
+        category = "Drama"
+      case 2:
+        category = "Humor"
+      case 3:
+        category = "Politics"
+      case 4:
+        category = "Philosophy"
+      case 5:
+        category = "History"
+      case 6:
+        category = "Adventure"
+      case 7:
+        category = "Mystory"
+      case 8:
+        category = "Romance"
+      case 9:
+        category = "Novel"
+        
+      default:
+        category = "Fiction"
+      }
       
-    default:
-      category = "Fiction"
+      let backItem = UIBarButtonItem()
+      backItem.title = category
+      //  backItem.tintColor = .red
+      
+      UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat-Bold", size: 20) ?? "Helvetica Neue "], for: .normal) // your textattributes here
+      navigationItem.backBarButtonItem = backItem
+      let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "BooksListTableViewController") as! BooksListTableViewController
+      secondViewController.category =  category
+      
+      self.navigationController?.pushViewController(secondViewController, animated: true)
     }
-    
-    let backItem = UIBarButtonItem()
-    backItem.title = category
-    //  backItem.tintColor = .red
-    
-    UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat-Bold", size: 20) ?? "Helvetica Neue "], for: .normal) // your textattributes here
-    navigationItem.backBarButtonItem = backItem
-    let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "BooksListTableViewController") as! BooksListTableViewController
-    secondViewController.category =  category
-    
-    self.navigationController?.pushViewController(secondViewController, animated: true)
   }
   
   

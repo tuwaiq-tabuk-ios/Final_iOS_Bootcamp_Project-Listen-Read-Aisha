@@ -11,6 +11,7 @@
 		CA04AB25276F5E1300EF99F7 /* SplashClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04AB24276F5E1300EF99F7 /* SplashClass.swift */; };
 		CA04AB27276F5F4C00EF99F7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04AB26276F5F4C00EF99F7 /* MainVC.swift */; };
 		CA04AB29276F601700EF99F7 /* CustomLabel Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04AB28276F601700EF99F7 /* CustomLabel Class.swift */; };
+		CA1BDAB02779ACB300ADD8B6 /* BookInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BDAAF2779ACB300ADD8B6 /* BookInfoViewController.swift */; };
 		CA52DBFA2773AC20006AFBAD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DBF92773AC20006AFBAD /* SignUpViewController.swift */; };
 		CA52DBFC2773AC7C006AFBAD /* CustomeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DBFB2773AC7C006AFBAD /* CustomeStyle.swift */; };
 		CA52DBFF2773ACA1006AFBAD /* TermsAndServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DBFE2773ACA1006AFBAD /* TermsAndServices.swift */; };
@@ -45,6 +46,7 @@
 		CA04AB24276F5E1300EF99F7 /* SplashClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashClass.swift; sourceTree = "<group>"; };
 		CA04AB26276F5F4C00EF99F7 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CA04AB28276F601700EF99F7 /* CustomLabel Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomLabel Class.swift"; sourceTree = "<group>"; };
+		CA1BDAAF2779ACB300ADD8B6 /* BookInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfoViewController.swift; sourceTree = "<group>"; };
 		CA52DBF92773AC20006AFBAD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CA52DBFB2773AC7C006AFBAD /* CustomeStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomeStyle.swift; sourceTree = "<group>"; };
 		CA52DBFE2773ACA1006AFBAD /* TermsAndServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndServices.swift; sourceTree = "<group>"; };
@@ -101,6 +103,22 @@
 				CA04AB20276F5D3600EF99F7 /* LogInViewController.swift */,
 			);
 			path = LogIn;
+			sourceTree = "<group>";
+		};
+		CA1BDAAD2779A82F00ADD8B6 /* BookInfo */ = {
+			isa = PBXGroup;
+			children = (
+				CA1BDAAE2779A84000ADD8B6 /* BookInfoVC */,
+			);
+			path = BookInfo;
+			sourceTree = "<group>";
+		};
+		CA1BDAAE2779A84000ADD8B6 /* BookInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				CA1BDAAF2779ACB300ADD8B6 /* BookInfoViewController.swift */,
+			);
+			path = BookInfoVC;
 			sourceTree = "<group>";
 		};
 		CA4AADEF27793509004099E7 /* HomeVC */ = {
@@ -234,6 +252,7 @@
 		CAE17FAF276E30B100F3BBF8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA1BDAAD2779A82F00ADD8B6 /* BookInfo */,
 				CAD1EA38277741C900820426 /* BooksByCategoryList */,
 				CA52DBFD2773AC8B006AFBAD /* Terms_Servecis */,
 				CA04AB1F276F5CF000EF99F7 /* LogIn */,
@@ -384,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE17FD3276E3C7700F3BBF8 /* UserInfoViewController.swift in Sources */,
+				CA1BDAB02779ACB300ADD8B6 /* BookInfoViewController.swift in Sources */,
 				CA52DC012773B469006AFBAD /* HomeViewController.swift in Sources */,
 				CAE17FCB276E33B600F3BBF8 /* UIColor.swift in Sources */,
 				CAAAEF8A277886A400B9ADDE /* Books.swift in Sources */,

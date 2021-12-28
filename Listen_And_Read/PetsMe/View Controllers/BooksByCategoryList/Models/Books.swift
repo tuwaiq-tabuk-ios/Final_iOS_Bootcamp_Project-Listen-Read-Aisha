@@ -8,13 +8,16 @@ import Foundation
 
 
 struct Books  {
+  
   let title : String
   let authorname : String
   let imageLink : String
   let format : String
+//  let summary : String
   
   init(_ books : Dictionary<String,Any>) {
     self.title = (books["title"] as? String)!
+//    self.summary = (books["summary"] as? String)!
     let authors = books["authors"]as? [Dictionary<String,Any>]
     if authors!.count > 0
     {

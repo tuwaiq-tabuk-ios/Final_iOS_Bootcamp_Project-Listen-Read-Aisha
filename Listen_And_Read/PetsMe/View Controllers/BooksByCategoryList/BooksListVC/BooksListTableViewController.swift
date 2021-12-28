@@ -10,19 +10,29 @@ import UIKit
 private let reuseIdentifier2 = String(describing: BookListCell.self)
 
 class BooksListTableViewController: UITableViewController, BookMangerDelegate {
+
   
-//  collectionView.collectionViewLayout = UICollectionViewFlowLayout()
+  
+  
+  //  collectionView.collectionViewLayout = UICollectionViewFlowLayout()
   
   var vSpinner : UIView?
   var category: String?
-  var apiUrl : URL?
   var articles: Array<Dictionary<String,Any>> = [];
   var pageNumber = 1
   var isDataLoading = false
   var booksManager = BookManager()
-  var booksData = [Books]()
+  var booksData:[Books] = [Books]()
   var nextLink : String?
   var fetchMore = false
+  
+  var currentBook: String = ""
+  var currentGenre: String = ""
+  var currentAuthor: String = ""
+  var currentSummary: String = ""
+  var currentImage: String = ""
+  
+  
   
   @IBOutlet weak var searchBar: UISearchBar!
   
@@ -41,24 +51,9 @@ class BooksListTableViewController: UITableViewController, BookMangerDelegate {
     booksManager.delegate = self
     self.showSpinner(onView: self.view)
     booksManager.fetchBookByCategory(category: category!)
-    
-    
-    
   }
-  override func viewWillDisappear(_ animated: Bool) {
-    booksData.removeAll()
-  }
-  override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    let offsetY = scrollView.contentOffset.y
-    let contentHeight = scrollView.contentSize.height
-    
-    if offsetY > contentHeight - scrollView.frame.height {
-      if !fetchMore
-      {
-        beginBatchFetch()
-      }
-    }
-  }
+  
+  
   func beginBatchFetch ()
   {
     fetchMore = true
@@ -83,13 +78,12 @@ class BooksListTableViewController: UITableViewController, BookMangerDelegate {
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier2, for: indexPath)as!BookListCell
-    let array = booksData[indexPath.row]
-    cell.bookAuthorName.text = array.authorname
-    cell.bookTitleLabel.text = array.title
+    cell.bookAuthorName.text = booksData[indexPath.row].authorname
+    cell.bookTitleLabel.text = booksData[indexPath.row].title
     cell.bookGenreLabel.text = category
     
     DispatchQueue.global().async{
-      let data = try? Data(contentsOf: URL(string: array.imageLink)! )
+      let data = try? Data(contentsOf: URL(string: self.booksData[indexPath.row].imageLink)! )
       
       if let data = data, let image = UIImage(data: data) {
         DispatchQueue.main.async {
@@ -101,30 +95,22 @@ class BooksListTableViewController: UITableViewController, BookMangerDelegate {
       }
     }
     
+    
     return cell
-    
-  }
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
- 
   }
   
+  
+  // MARK: - Books Delegte - show books depend on the category or search
   
   func didUpdateBook(_ bookManager: BookManager, _ books: [Books], _ nextUrl: BookModel) {
     
     fetchMore = false
     booksData.append(contentsOf: books)
     nextLink = nextUrl.next
-    
     removeSpinner()
-    
     DispatchQueue.main.async {
       self.tableView.reloadData()
     }
-  }
-  
-  func didFailWithError(error: Error) {
-    
   }
   
 }
@@ -146,7 +132,6 @@ extension BooksListTableViewController
     
     vSpinner = spinnerView
   }
-  
   func removeSpinner() {
     DispatchQueue.main.async {
       self.vSpinner?.removeFromSuperview()
@@ -174,6 +159,29 @@ extension BooksListTableViewController : UISearchBarDelegate {
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
     self.searchBar.layer.borderColor = UIColor.cmWhite.cgColor
     self.searchBar.layer.borderWidth = 6
+    
+  }
+  
+  
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    currentBook = booksData[indexPath.row].title
+    //    currentGenre = booksData[indexPath.row].summary
+    //    currentSummary = booksData[indexPath.row].summary
+    currentImage = booksData[indexPath.row].imageLink
+    currentAuthor = booksData[indexPath.row].authorname
+    performSegue(withIdentifier: "show", sender: nil)
+  }
+  
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destinationVC = segue.destination as? BookInfoViewController {
+      destinationVC.bookTitle = currentBook
+      destinationVC.genre = category!
+      destinationVC.image = currentImage
+      destinationVC.author = currentAuthor
+      
+    }
     
   }
   

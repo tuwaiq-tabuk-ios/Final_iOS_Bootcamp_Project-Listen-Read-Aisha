@@ -47,7 +47,7 @@ struct BookManager {
         
         
         if error != nil {
-          //  self.delegate?.didFailWithError(error: error!)
+//            self.delegate?.didFailWithError(error: error!)
           return
         }
         
@@ -100,14 +100,14 @@ struct BookManager {
     for books in booksData {
       booksarray.append(Books(books))
     }
-    
+    print( " *******\n\n\n The booksarray:      \(booksarray.count)    ")
     return booksarray
   }
   
   func ParseNextJSON( _ nextUrl : String) -> BookModel
   {
     
-    var booksNext = BookModel(nextValue: nextUrl)
+    let booksNext = BookModel(nextValue: nextUrl)
     return booksNext
   }
   
