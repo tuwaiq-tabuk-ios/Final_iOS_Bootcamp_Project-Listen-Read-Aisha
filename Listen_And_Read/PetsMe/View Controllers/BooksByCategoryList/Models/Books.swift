@@ -11,68 +11,51 @@ struct Books  {
   
   let title : String
   let authorname : String
-  let imageLink : String
+  var imageLink : String
   let format : String
-//  let summary : String
+  let book : String
   
-  init(_ books : Dictionary<String,Any>) {
+  init(_ books : Dictionary<String, Any>) {
+    
+    let testSummary: Any
+    testSummary = books["summary"] as Any
+    print("-----testSummary------- \(testSummary)\n")
+    
     self.title = (books["title"] as? String)!
-//    self.summary = (books["summary"] as? String)!
+  
+    
+    self.book = ""
+    
     let authors = books["authors"]as? [Dictionary<String,Any>]
     if authors!.count > 0
     {
       let authorName = ((authors![0]["name"]) as? String)!
       let array = authorName.components(separatedBy: ", ")
-      if array.count>1
-      {
+      if array.count>1 {
         self.authorname = array[1]+" "+array[0]
-      }
-      else
-      {
-        self.authorname = array[0]
         
+      }else {
+        self.authorname = array[0]
       }
-    }
-    else
-    {
+      
+    }else{
       self.authorname = "NA"
     }
+    
+    
+    
+    //  MARK:  - Edit File get onle text/plain
+
     let imageJson = books["formats"] as? Dictionary<String,String>
     self.imageLink = String((imageJson?["image/jpeg"])!)
 //    self.imageLink = (imageJson?["image/jpeg"]!) as! String
     
-    if let link = imageJson!["text/html"] {
-      self.format = link
-    }
-    else if let link = imageJson!["text/html; charset=utf-8"] {
-      self.format = link
-    }
-    else if let link = imageJson!["text/html; charset=iso-8859-1"] {
-      self.format = link
-    }
-    else if let link = imageJson!["application/pdf"] {
-      self.format = link
-    }
-    else if let link = imageJson!["text/plain"] {
-      self.format = link
-    }
-    else if let link = imageJson!["text/plain; charset=utf-8"] {
-      self.format = link
-    }
-    else if let link = imageJson!["text/html; charset=us-ascii"] {
-      self.format = link
-    }
-    else if let link = imageJson!["text/plain; charset=iso-8859-1"] {
-      self.format = link
-    }
-    
-    else
-    {
+    if let link = imageJson!["text/plain; charset=utf-8"] {
+    self.format = link
+    }else{
       self.format = "NA"
     }
-    
-    
-    
+
   }
 }
 

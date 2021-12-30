@@ -8,38 +8,37 @@
 import Foundation
 
 struct BookManager {
-  let bookUrl = "http://skunkworks.ignitesol.com:8000/books/?mime_type=image%2Fjpeg"
+  
   
   
   var delegate : BookMangerDelegate?
   
   
-  func fetchBookByCategory(category : String)
-  {
-    let urlString = "\(bookUrl)&topic=\(category)"
+  func fetchBookByCategory(category : String){
+    let urlString = "\(EndPoints.guttenbergUrl)&topic=\(category)"
     print(urlString)
     performRequest(with: urlString)
   }
   
-  func nextBooks(urlString : String)
-  {
+  
+  func nextBooks(urlString : String){
+    
     performRequest(with: urlString)
   }
   
-  func SearchBookByCategory(category : String, search : String)
-  {
+  
+  func SearchBookByCategory(category : String, search : String){
     
-    let UrlString = "\(bookUrl)&topic=\(category)&search=\(search)"
+    let UrlString = "\(EndPoints.guttenbergUrl)&topic=\(category)&search=\(search)"
     let urlNew:String = UrlString.replacingOccurrences(of: " ", with: "%20")
-
+    //        var urlString:String = UrlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     print(urlNew)
     
     performRequest(with: urlNew)
   }
   
   
-  func performRequest(with urlString : String)
-  {
+  func performRequest(with urlString : String) {
     if let url  = URL(string: urlString){
       let session = URLSession(configuration: .default)
       
@@ -71,35 +70,24 @@ struct BookManager {
               {
                 self.delegate?.didUpdateBook(self, booksArray, BookModel.init(nextValue: "NA"))
               }
-              
-              
-            } else {
-              
-              
-              
             }
             
           } else {
             print("Error");
           }
         }
-        
-        
-        
       }
-      
       task.resume()
     }
-    
   }
   
   
-  func parseJSON( _ booksData : Array<Dictionary<String,Any>>) -> [Books]
-  {
+  func parseJSON( _ booksData : Array<Dictionary<String,Any>>) -> [Books]{
     var booksarray = [Books]()
     for books in booksData {
       booksarray.append(Books(books))
     }
+    
     print( " *******\n\n\n The booksarray:      \(booksarray.count)    ")
     return booksarray
   }
@@ -107,6 +95,7 @@ struct BookManager {
   
   func ParseNextJSON( _ nextUrl : String) -> BookModel
   {
+    
     let booksNext = BookModel(nextValue: nextUrl)
     return booksNext
   }

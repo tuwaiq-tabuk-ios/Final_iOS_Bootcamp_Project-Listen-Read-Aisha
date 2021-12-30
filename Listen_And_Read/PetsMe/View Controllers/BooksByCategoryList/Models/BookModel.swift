@@ -8,7 +8,6 @@
 import Foundation
 struct BookModel {
     let next : String
-    
     init(nextValue : String) {
         self.next = nextValue
     }

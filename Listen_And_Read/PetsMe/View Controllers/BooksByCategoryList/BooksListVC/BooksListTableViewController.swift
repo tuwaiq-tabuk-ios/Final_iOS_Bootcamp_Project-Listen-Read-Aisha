@@ -10,15 +10,15 @@ import UIKit
 private let reuseIdentifier2 = String(describing: BookListCell.self)
 
 class BooksListTableViewController: UITableViewController, BookMangerDelegate {
-
-  
-
   
   var vSpinner : UIView?
   var category: String?
+  var apiUrl : URL?
   var articles: Array<Dictionary<String,Any>> = [];
+  var pageNumber = 1
+  var isDataLoading = false
   var booksManager = BookManager()
-  var booksData:[Books] = [Books]()
+  var booksData = [Books]()
   var nextLink : String?
   var fetchMore = false
   
@@ -50,6 +50,20 @@ class BooksListTableViewController: UITableViewController, BookMangerDelegate {
   }
   
   
+  //MARK: - Load More books
+  override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let offsetY = scrollView.contentOffset.y
+    let contentHeight = scrollView.contentSize.height
+    
+    if offsetY > contentHeight - scrollView.frame.height {
+      if !fetchMore
+      {
+        beginBatchFetch()
+      }
+    }
+  }
+  
+  
   func beginBatchFetch ()
   {
     fetchMore = true
@@ -76,20 +90,28 @@ class BooksListTableViewController: UITableViewController, BookMangerDelegate {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier2, for: indexPath)as!BookListCell
     cell.bookAuthorName.text = booksData[indexPath.row].authorname
     cell.bookTitleLabel.text = booksData[indexPath.row].title
-    cell.bookGenreLabel.text = category
     
     DispatchQueue.global().async{
-      let data = try? Data(contentsOf: URL(string: self.booksData[indexPath.row].imageLink)! )
+      let data = try? Data(contentsOf: URL(string: self.booksData[indexPath.row].imageLink)!)
       
       if let data = data, let image = UIImage(data: data) {
         DispatchQueue.main.async {
-          cell.bookCoverImage.image = image
-          cell.bookCoverImage.contentMode = .scaleToFill
-          
+          cell.bookCoverImage?.image = image
+          cell.bookCoverImage?.contentMode = .scaleToFill
           
         }
       }
     }
+    
+    
+    cell.bookGenreLabel.text = category
+    
+
+    
+    print("~~ Formats Image: \(String(describing: booksData[indexPath.row].format))\n\n\n\n")
+
+//    print("~~ Formats Image: \(String(describing: booksData[indexPath.row].imageLink))\n\n\n\n")
+
     
     
     return cell
@@ -111,8 +133,7 @@ class BooksListTableViewController: UITableViewController, BookMangerDelegate {
   
 }
 
-extension BooksListTableViewController
-{
+extension BooksListTableViewController{
   
   func showSpinner(onView : UIView) {
     let spinnerView = UIView.init(frame: onView.bounds)
@@ -136,6 +157,7 @@ extension BooksListTableViewController
   }
 }
 
+
 extension BooksListTableViewController : UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     if let searchText = searchBar.text
@@ -151,14 +173,22 @@ extension BooksListTableViewController : UISearchBarDelegate {
     self.showSpinner(onView: self.view)
     
   }
-
+  
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    self.searchBar.layer.borderColor = UIColor.cmWhite.cgColor
+    self.searchBar.layer.borderWidth = 6
+    
+  }
   
   
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+
+//    currentSummary = booksData[indexPath.row].txtLink
+
     currentBook = booksData[indexPath.row].title
-    //    currentGenre = booksData[indexPath.row].summary
-    //    currentSummary = booksData[indexPath.row].summary
+    currentSummary = booksData[indexPath.row].format
     currentImage = booksData[indexPath.row].imageLink
     currentAuthor = booksData[indexPath.row].authorname
     performSegue(withIdentifier: "show", sender: nil)
@@ -166,15 +196,14 @@ extension BooksListTableViewController : UISearchBarDelegate {
   
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let destinationVC = segue.destination as? BookInfoViewController {
+    if let destinationVC = segue.destination as? BookDetailsVC {
       destinationVC.bookTitle = currentBook
       destinationVC.genre = category!
       destinationVC.image = currentImage
       destinationVC.author = currentAuthor
+      destinationVC.summary = currentSummary
       
     }
-    
   }
-  
 }
 
