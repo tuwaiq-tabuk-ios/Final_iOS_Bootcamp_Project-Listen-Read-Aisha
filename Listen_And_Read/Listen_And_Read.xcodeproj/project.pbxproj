@@ -12,6 +12,8 @@
 		CA04AB27276F5F4C00EF99F7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04AB26276F5F4C00EF99F7 /* MainVC.swift */; };
 		CA04AB29276F601700EF99F7 /* CustomLabel Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04AB28276F601700EF99F7 /* CustomLabel Class.swift */; };
 		CA1BDAB02779ACB300ADD8B6 /* BookDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1BDAAF2779ACB300ADD8B6 /* BookDetailsVC.swift */; };
+		CA2AF489277DE7A600BC6CD9 /* ReadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2AF488277DE7A600BC6CD9 /* ReadingVC.swift */; };
+		CA2AF48B277DEE0800BC6CD9 /* DisplayBookContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2AF48A277DEE0800BC6CD9 /* DisplayBookContentVC.swift */; };
 		CA52DBFA2773AC20006AFBAD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DBF92773AC20006AFBAD /* SignUpViewController.swift */; };
 		CA52DBFC2773AC7C006AFBAD /* CustomeStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DBFB2773AC7C006AFBAD /* CustomeStyle.swift */; };
 		CA52DBFF2773ACA1006AFBAD /* TermsAndServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA52DBFE2773ACA1006AFBAD /* TermsAndServices.swift */; };
@@ -48,6 +50,8 @@
 		CA04AB26276F5F4C00EF99F7 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CA04AB28276F601700EF99F7 /* CustomLabel Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomLabel Class.swift"; sourceTree = "<group>"; };
 		CA1BDAAF2779ACB300ADD8B6 /* BookDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsVC.swift; sourceTree = "<group>"; };
+		CA2AF488277DE7A600BC6CD9 /* ReadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingVC.swift; sourceTree = "<group>"; };
+		CA2AF48A277DEE0800BC6CD9 /* DisplayBookContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayBookContentVC.swift; sourceTree = "<group>"; };
 		CA52DBF92773AC20006AFBAD /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CA52DBFB2773AC7C006AFBAD /* CustomeStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomeStyle.swift; sourceTree = "<group>"; };
 		CA52DBFE2773ACA1006AFBAD /* TermsAndServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndServices.swift; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 				CA1BDAAF2779ACB300ADD8B6 /* BookDetailsVC.swift */,
 			);
 			path = BookInfoVC;
+			sourceTree = "<group>";
+		};
+		CA2AF487277DE77D00BC6CD9 /* ReadingView */ = {
+			isa = PBXGroup;
+			children = (
+				CA2AF488277DE7A600BC6CD9 /* ReadingVC.swift */,
+				CA2AF48A277DEE0800BC6CD9 /* DisplayBookContentVC.swift */,
+			);
+			path = ReadingView;
 			sourceTree = "<group>";
 		};
 		CA4AADEF27793509004099E7 /* HomeVC */ = {
@@ -270,6 +283,7 @@
 		CAE17FAF276E30B100F3BBF8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA2AF487277DE77D00BC6CD9 /* ReadingView */,
 				CA90D4F2277C481200544D83 /* ReadingList */,
 				CA1BDAAD2779A82F00ADD8B6 /* Book Detail */,
 				CAD1EA38277741C900820426 /* BooksByCategoryList */,
@@ -422,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE17FD3276E3C7700F3BBF8 /* UserInfoViewController.swift in Sources */,
+				CA2AF489277DE7A600BC6CD9 /* ReadingVC.swift in Sources */,
 				CA1BDAB02779ACB300ADD8B6 /* BookDetailsVC.swift in Sources */,
 				CA52DC012773B469006AFBAD /* HomeViewController.swift in Sources */,
 				CAE17FCB276E33B600F3BBF8 /* UIColor.swift in Sources */,
@@ -445,6 +460,7 @@
 				CAAAEF8C277886AB00B9ADDE /* BookManager.swift in Sources */,
 				CA04AB27276F5F4C00EF99F7 /* MainVC.swift in Sources */,
 				CA04AB25276F5E1300EF99F7 /* SplashClass.swift in Sources */,
+				CA2AF48B277DEE0800BC6CD9 /* DisplayBookContentVC.swift in Sources */,
 				CAE17F9B276E2F3300F3BBF8 /* AppDelegate.swift in Sources */,
 				CA52DC062773B4C3006AFBAD /* BookOfTheDayCell.swift in Sources */,
 				CA04AB21276F5D3600EF99F7 /* LogInViewController.swift in Sources */,

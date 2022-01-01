@@ -27,7 +27,7 @@ class BookDetailsVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    textField.text = ""
+//    textField.text = ""
     bookCover_ImageView.layer.cornerRadius = 20
   }
   
@@ -42,17 +42,7 @@ class BookDetailsVC: UIViewController {
     
     //  MARK:  - Edit File get text and image from url
     
-    if self.summary != "NA"{
-      
-        DispatchQueue.main.async {
-          let textURL=URL(string: self.summary)!
-          let textData=try? Data(contentsOf: textURL)
-          let textFromURL = String(data: textData!, encoding: .utf8)!
-          self.textField.text = textFromURL
-          
-          
-        }
-      }
+
     
     DispatchQueue.global().async{
       let data = try? Data(contentsOf: URL(string: self.image)!)
@@ -72,8 +62,28 @@ class BookDetailsVC: UIViewController {
   
   @IBAction func button_Pressed(_ sender: UIButton) {
     
+    let vc = self.storyboard?.instantiateViewController(withIdentifier: "DisplayBookContentVC") as! DisplayBookContentVC
     
+    
+    if self.summary != "NA"{
+  
+        DispatchQueue.main.async {
+          let textURL=URL(string: self.summary)!
+          let textData=try? Data(contentsOf: textURL)
+          let textFromURL = String(data: textData!, encoding: .utf8)!
+          vc.bookContent.text = ""
+          vc.bookContent.text = textFromURL
+        }
+      }
+    
+    vc.modalPresentationStyle = .fullScreen
+    self.navigationController?.pushViewController(vc, animated: true)
+
+//    present(vc,animated: false, completion: nil)
     
     
   }
+  
+
+  
 }
