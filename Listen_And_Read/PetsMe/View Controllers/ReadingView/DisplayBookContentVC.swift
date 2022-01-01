@@ -36,18 +36,20 @@ class DisplayBookContentVC: UIViewController {
       
       
       if synth.isSpeaking {
-          // when synth is already speaking or is in paused state
-
+print("Is Speaking \n\n")
           if synth.isPaused {
+            print("Is continue\n\n ")
+
               synth.continueSpeaking()
           }else {
+            print(" pause speaking \n\n")
+
           synth.pauseSpeaking(at: AVSpeechBoundary.immediate)
           }
         
       }else{
-          // when synth is not started yet
+        print("start Speaking\n\n ")
 
-//          let string = bookContent
         let utterance = AVSpeechUtterance(string: bookContent.text)
 
           utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
@@ -68,14 +70,14 @@ extension DisplayBookContentVC: AVSpeechSynthesizerDelegate {
         }
         
         let mutableAttributedString = NSMutableAttributedString(string: string)
-        mutableAttributedString.addAttribute(.foregroundColor, value: UIColor.red, range: characterRange)
-//      bookContent.font = .systemFont(ofSize: 30)
+      mutableAttributedString.addAttribute(.foregroundColor, value: UIColor.yellow, range: characterRange)
 
         return mutableAttributedString
     }
   func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
       self.bookContent.attributedText = attributedString(from: utterance.speechString, highlighting: characterRange)
-    bookContent.font = .systemFont(ofSize: 24)
+    
+    bookContent.font = .systemFont(ofSize: 25)
     bookContent.textAlignment = .center
     
 
